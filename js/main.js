@@ -124,3 +124,111 @@ boton4.addEventListener("click", function (event){
         document.getElementById("input4").select();
 
         });
+
+
+  /////////////////////////Ejercicios parte 2////////////////////
+ 
+boton5.addEventListener("click", function (event){
+    event.preventDefault();
+
+    //definir entrada
+    let entrada2 = document.getElementById("input5").value.toString().split(' ');
+    
+    function array_max(arr) {
+        let max_num = arr[0]
+        arr.forEach(element => {
+            if (parseFloat(element) > max_num) {
+                max_num = parseFloat(element)
+            }
+        });
+        return max_num
+    }
+
+
+    function array_min(arr) {
+        let min_num = arr[0]
+        arr.forEach(element => {
+            if (parseFloat(element) < min_num) {
+                min_num = parseFloat(element)
+            }
+        });
+        return min_num
+    }
+
+
+    function enrango(arr, min1, max1){
+        if ((array_min(arr) >= min1 && array_max(arr) <= max1)) {
+            return true
+        }
+        return false
+    }
+
+   if ((enrango(entrada2, 1, 100) && entrada2.length == 3)) {
+
+    max_num = "El número mayor es: " + array_max(entrada2);
+   } else {
+    max_num = "el arreglo no está en rango o no tiene 3 elementos"
+   }
+
+
+    let resultado = document.getElementById("alerta5");
+    resultado.innerHTML = "";
+    resultado.innerHTML = max_num;
+
+    document.getElementById("input5").focus();
+    document.getElementById("input5").select();
+
+});
+
+
+boton6.addEventListener("click", function (event){
+    event.preventDefault();
+
+    //definir entrada
+    let entrada3 = document.getElementById("input6").value.toString().split(' ');
+    
+    function array_max(arr) {
+        let max_num = arr[0]
+        arr.forEach(element => {
+            if (parseFloat(element) > max_num) {
+                max_num = parseFloat(element)
+            }
+        });
+        return max_num
+    }
+
+
+    function array_min(arr) {
+        let min_num = arr[0]
+        arr.forEach(element => {
+            if (parseFloat(element) < min_num) {
+                min_num = parseFloat(element)
+            }
+        });
+        return min_num
+    }
+
+
+    function enrango(arr, min1, max1){
+        if ((array_min(arr) >= min1 && array_max(arr) <= max1)) {
+            return true
+        }
+        return false
+    }
+
+   if ((enrango(entrada3, 1, 100) && entrada3.length == 3)) {
+
+    min_num = "El número menor es: " + array_min(entrada3);
+   } else {
+    min_num = "el arreglo no está en rango o no tiene 3 elementos"
+   }
+
+
+    let resultado = document.getElementById("alerta6");
+    resultado.innerHTML = "";
+    resultado.innerHTML = min_num;
+
+    document.getElementById("input6").focus();
+    document.getElementById("input6").select();
+
+}); 
